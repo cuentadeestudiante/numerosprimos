@@ -3,22 +3,27 @@
 <head>
     <title>Números primos</title>
 </head>
-<body>
+<body >
 
-<form onsubmit="primo()">
+<form >
  Escribe un número primo:
  <input type="text" name="numero" id="numero">
-
+<input type="button" name="probar" value="Probar" onclick="primo()">
 </form>
   <div id="resultado"></div>
     <script>
-	
+	//alert("hola");
 	function primo()
 	{
 		var numero=parseInt(document.getElementById("numero").value);
 		var NumeroPrimo=true;
  		
-      if(intentos){intentos++}else{var intentos = 1;}
+      if(intentos === undefined){
+      		intentos=intentos+1;
+	}else{
+		var intentos = 1;
+	}
+      var i=1;
 		for(i=1;i<numero;i++)
 		{
 			
@@ -30,12 +35,12 @@
 		}
  
       if(NumeroPrimo){
-          document.getElementById("resultado").innerHTML="El numero "+valor+" es Primo. Número de intentos: "+ intentos + ".";
-        
+          document.getElementById("resultado").innerHTML="El numero "+numero+" es Primo. Número de intentos: "+ intentos + ".";
+        	
         }
       else{
         
-			document.getElementById("resultado").innerHTML="El numero "+valor+" NO es Primo. Número de intentos: "+ intentos + ".";
+	  document.getElementById("resultado").innerHTML="El numero "+numero+" NO es Primo. Número de intentos: "+ intentos + ".";
         
       }
 	}
@@ -43,4 +48,3 @@
     </script>
 </body>
 </html>
-	
